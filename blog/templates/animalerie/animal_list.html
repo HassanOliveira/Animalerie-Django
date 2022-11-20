@@ -1,0 +1,120 @@
+{% extends 'animalerie/base.html' %}
+
+{% block content %}
+    <div class="container text-center">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h2 style="text-align:center">Les animaux</h2>
+            </div>
+            <br><br><br><br>
+            <div class="col">
+                <h2 style="text-align:center">Les équipements</h2>
+            </div>
+        </div>
+        <div class="row row-cols-4">
+            {% for animal in animals %}
+                {% if animal.id_animal == 'Tic' or animal.id_animal == 'Tac' %}
+                    <div class="col">
+                        <div class="card" style="width: 18rem;" id="animals">
+                            <img src= {{animal.photo}} class="card-img-top" width="300" height="200">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ animal.id_animal }}</h5>
+                            </div>    
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">ETAT: {{ animal.etat }}</li>
+                                <li class="list-group-item">LIEU: {{ animal.lieu|linebreaksbr }}</li>
+                            </ul>  
+                            <div class="card-body">
+                                <button class="btn btn-primary" type="button" id="button"><a href="{% url 'animal_detail' id_animal=animal.id_animal %}" class="card-link">Changer</a></button>
+                            </div>  
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            {% for equip in equipements %}
+                {% if equip.id_equip == 'Litière' or equip.id_equip == 'Mangeoire' %}
+                    <div class="col">
+                        <div class="card" style="width: 18rem;" id="equipements">
+                            <img src={{equip.photo}} class="card-img-top" width="300" height="200">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ equip.id_equip }}</h4>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                {% if equip.disponibilite == 'libre' %}
+                                    <li class="list-group-item" id="libre">Disponibilité: {{ equip.disponibilite }}</li>
+                                {% endif %}
+                                {% if equip.disponibilite == 'occupé' %}
+                                    <li class="list-group-item" id="occupe">Disponibilité: {{ equip.disponibilite }}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row row-cols-4">
+            {% for animal in animals %}
+                {% if animal.id_animal == 'Patrick' or animal.id_animal == 'Totoro' %}
+                    <div class="col">
+                        <div class="card" style="width: 18rem;" id="animals">
+                            <img src= {{animal.photo}} class="card-img-top" width="300" height="200">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ animal.id_animal }}</h5>
+                            </div>    
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">ETAT: {{ animal.etat }}</li>
+                                <li class="list-group-item">LIEU: {{ animal.lieu|linebreaksbr }}</li>
+                            </ul>  
+                            <div class="card-body">
+                                <button class="btn btn-primary" type="button" id="button"><a href="{% url 'animal_detail' id_animal=animal.id_animal %}" class="card-link">Changer</a></button>
+                            </div>  
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            
+            {% for equip in equipements %}
+                {% if equip.id_equip == 'Roue' or equip.id_equip == 'Nid' %}
+                    <div class="col">
+                        <div class="card" style="width: 18rem;" id="equipements">
+                            <img src={{equip.photo}} class="card-img-top" width="300" height="200">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ equip.id_equip }}</h4>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                {% if equip.disponibilite == 'libre' %}
+                                    <li class="list-group-item" id="libre">Disponibilité: {{ equip.disponibilite }}</li>
+                                {% endif %}
+                                {% if equip.disponibilite == 'occupé' %}
+                                    <li class="list-group-item" id="occupe">Disponibilité: {{ equip.disponibilite }}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row row-cols-4">
+            {% for animal in animals %}
+                {% if animal.id_animal == 'Pocahontas' %}
+                    <div class="col">
+                        <div class="card" style="width: 18rem;" id="animals">
+                            <img src= {{animal.photo}} class="card-img-top" width="300" height="200">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ animal.id_animal }}</h5>
+                            </div>    
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">ETAT: {{ animal.etat }}</li>
+                                <li class="list-group-item">LIEU: {{ animal.lieu|linebreaksbr }}</li>
+                            </ul>  
+                            <div class="card-body">
+                                <button class="btn btn-primary" type="button" id="button"><a href="{% url 'animal_detail' id_animal=animal.id_animal %}" class="card-link">Changer</a></button>
+                            </div>  
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

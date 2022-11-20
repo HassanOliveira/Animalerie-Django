@@ -1,0 +1,37 @@
+{% extends 'animalerie/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-text-center" id="central">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{animal.photo}}" width="230px" height="200px" id="img_details">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body" id="card_details">
+                        <h4 class="card-title">{{ animal.id_animal }}</h5>
+                        <form method="POST" class="post-form" id="detail">{% csrf_token %}
+                            <b class="card-text"> Changer : </b> {{ form.as_ul }}
+                            <div class="d-grid gap-2 d-md-block" id="buttons_details">
+                                <button class="btn btn-primary" type="submit" id="button">OK</button>
+                                <button class="btn btn-primary" type="submit" id="button"><a href="{% url 'animal_list' %}" id="button">Back</a></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if form.is_valid %}
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{message}}
+                </div>
+            {% endif %}
+            {% if not error %}
+                <div class="alert alert-success" role="alert">
+                    {{message}}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

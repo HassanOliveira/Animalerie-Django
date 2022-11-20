@@ -1,0 +1,98 @@
+h1 {
+    color: #000000;
+    font-family: 'Federo', sans-serif;
+}
+
+h2 {
+    color: #000000;
+    font-family: 'Cinzel Decorative', cursive;
+    padding-right: 12px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+h5 {
+    color: #ffffff79;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.page-header {
+    background-color: #4D7314;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1 {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+body {
+    background-color: #93A677;
+}
+
+body img {
+    border-radius: 12px 12px 0px 0px;
+    border-bottom: solid;
+}
+
+
+#animals {
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 7px #4D7314;    
+}
+
+#equipements {
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 7px #4D7314;    
+}
+
+#libre {
+    background-color: rgb(0, 255, 0);
+    font-weight: bold;
+    color: black;
+}
+
+#occupe {
+    background-color: red;
+    color: black;
+    font-weight: bold;
+}
+
+#button {
+    width: 85.5px;
+    height: 38px;
+    background-color: #4D7314;
+    border-color: black;
+    color:#ffffff
+}
+
+a.card-link {
+    color: #ffffff; 
+}
+
+.container-text-center {
+
+    width: 28.2%;
+    margin-left: 36%;
+    margin-top: 40px;
+    box-shadow: 1px 1px 7px #4D7314;
+    border-radius: 5px;   
+}
+
+#card_details {
+    margin-left: 100px;
+}
+
+.post-form {
+    margin-top: 10px;
+}
+
+#img_details {
+    border-radius: 5px;
+}
+
+#buttons_details {
+    padding-top: 20px;
+}
